@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-app
+  name: test-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-pod
+  template:
+    metadata:
+      labels:
+        app: test-pod
+      annotations:
+        configmap-version: "1"
+    spec:
+      containers:
+        - name: web
+          image: nginx
+          ports:
+            - name: web80
+              containerPort: 80
+              protocol: TCP
+          env: 
+            - name: environment
+              valueFrom:
+                configMapKeyRef:
+                  name: test-cm
+                  key: ENV
