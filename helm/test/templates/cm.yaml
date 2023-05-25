@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: test-{{ include "test.fullname" . }}
 data:
-  ENV: dev2
+  ENV: dev3
