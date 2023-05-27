@@ -8,5 +8,5 @@ spec:
       containers:
       - name: test-j
         image: busybox
-        command: ["ifconfig"]
+        command: ["pwd"]
       restartPolicy: Never
