@@ -8,5 +8,5 @@ spec:
       containers:
       - name: test-j
         image: busybox
-        command: ["ip -f inet a s"]
+        command: ["ifconfig"]
       restartPolicy: Never
