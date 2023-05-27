@@ -4,3 +4,8 @@ metadata:
   name: test-{{ include "test.fullname" . }}
 data:
   ENV: dev3
+  test.sh: |
+    #!/bin/bash 
+
+    echo "ifconfig"
+    ifconfig

@@ -10,5 +10,13 @@ spec:
       containers:
       - name: test-j
         image: busybox
-        command: ["pwd"]
+        command: ["/script/test.sh"]
+          volumeMounts:
+            - name: script
+              mountPath: "/script"
+      volumes:
+        - name: script
+          configMap:
+            name: test-{{ include "test.fullname" . }}
+            defaultMode: 0500
       restartPolicy: Never
