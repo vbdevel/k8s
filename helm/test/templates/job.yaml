@@ -11,9 +11,9 @@ spec:
       - name: test-j
         image: busybox
         command: ["/script/test.sh"]
-          volumeMounts:
-            - name: script
-              mountPath: "/script"
+        volumeMounts:
+          - name: script
+            mountPath: "/script"
       volumes:
         - name: script
           configMap:
