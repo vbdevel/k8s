@@ -13,11 +13,10 @@ spec:
         args:  
         - /bin/sh
         - -c
-        - ls -al /; ls -al /test.sh; ./test.sh
+        - ls -al /; ls -al /scrpt; ./test.sh
         volumeMounts:
         - name: config-volume
-          mountPath: test.sh
-          subPath: test.sh
+          mountPath: /scrpt
       volumes:
       - name: config-volume
         configMap:
