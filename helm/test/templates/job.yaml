@@ -13,10 +13,10 @@ spec:
         args:  
         - /bin/sh
         - -c
-        - ls -al /; ls -al /sc; ls -al /sc/test.sh; sleep 5;/sc/test.sh
+        - ls -al /; ls -al /test.sh; /test.sh
         volumeMounts:
         - name: config-volume
-          mountPath: /sc/test.sh
+          mountPath: /test.sh
           subPath: test.sh
       volumes:
       - name: config-volume
