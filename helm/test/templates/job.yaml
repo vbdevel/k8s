@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: job-{{ include "test.fullname" . }}
+  annotation: 
+    job: {{ .Values.podAnnotations.job }}
 spec:
   template:
     spec:
