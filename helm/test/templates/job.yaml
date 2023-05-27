@@ -22,6 +22,6 @@ spec:
       - name: config-volume
         configMap:
           name: script-helm-test  
-          defaultMode: 0500 
+          defaultMode: 0555 
       restartPolicy: Never
 
