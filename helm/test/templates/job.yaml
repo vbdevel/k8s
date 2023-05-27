@@ -16,8 +16,8 @@ spec:
         - ls -al /; echo Hello from the Kubernetes cluster
         volumeMounts:
         - name: config-volume
-          path: /sc/test.sh
-          subPath: test.sh
+          path: "/sc/test.sh"
+          subPath: "test.sh"
       volumes:
       - name: config-volume
         configMap:
