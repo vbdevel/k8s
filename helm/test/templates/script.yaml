@@ -4,5 +4,5 @@ metadata:
   name: script-{{ include "test.fullname" . }}
 data:
   test.sh: |
-    echo "ifconfig"
+    echo "start script"
     pwd
