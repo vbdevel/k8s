@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: job-{{ include "test.fullname" . }}
-  shannotation: 
+  annotations: 
     cm: {{ .Values.job }}
 spec:
   backoffLimit: 2
