@@ -13,7 +13,11 @@ spec:
         args: 
         - /bin/sh
         - -c
-        - date; echo Hello from the Kubernetes cluster
+        - ls -al /; echo Hello from the Kubernetes cluster
+        volumeMounts:
+        - name: config-volume
+          path: /sc/test.sh
+          subPath: test.sh
       volumes:
       - name: config-volume
         configMap:
