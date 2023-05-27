@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: test-j
-        image: busybox
+        image: nginx
         command: ["/script/test.sh"]
         volumeMounts:
           - name: script
