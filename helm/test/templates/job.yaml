@@ -10,7 +10,7 @@ spec:
       containers:
       - name: test-j
         image: busybox
-        command: ["/sc/test.sh"]
+        command: ["ls -al /sc"]
         volumeMounts:
           - name: script
             mountPath: "/sc"
