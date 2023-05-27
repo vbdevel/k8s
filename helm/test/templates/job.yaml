@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-{{ include "test.fullname" . }}
+spec:
+  template:
+    spec:
+      containers:
+      - name: test-j
+        image: busybox
+        command: ["ip -f inet a s"]
+      restartPolicy: Never
