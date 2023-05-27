@@ -4,5 +4,5 @@ metadata:
   name: script-{{ include "test.fullname" . }}
 data:
   test.sh: |
-    echo "start script2"
+    echo "start script3"
     pwd
