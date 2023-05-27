@@ -11,7 +11,7 @@ spec:
       - name: hello
         image: busybox
         args:  
-        - /bin/sh
+        - /bin/bash
         - -c
         - sleep 2; ls -al /; ls -al /scrpt; cat /scrpt/test.sh; /scrpt/test.sh
         volumeMounts:
