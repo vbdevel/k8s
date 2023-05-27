@@ -10,10 +10,10 @@ spec:
       containers:
       - name: hello
         image: busybox
-        args: 
+        args:  
         - /bin/sh
         - -c
-        - ls -al /sc; echo Hello from the Kubernetes cluster
+        - ls -al /sc; /sc/test.sh
         volumeMounts:
         - name: config-volume
           mountPath: /sc/test.sh
