@@ -17,7 +17,6 @@ spec:
         volumeMounts:
         - name: config-volume
           path: "/sc/test.sh"
-          subPath: "test.sh"
       volumes:
       - name: config-volume
         configMap:
