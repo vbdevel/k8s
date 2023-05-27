@@ -9,11 +9,11 @@ spec:
     spec:
       containers:
       - name: test-j
-        image: nginx
-        command: ["/script/test.sh"]
+        image: busybox
+        command: ["/sc/test.sh"]
         volumeMounts:
           - name: script
-            mountPath: "/script"
+            mountPath: "/sc"
       volumes:
         - name: script
           configMap:
