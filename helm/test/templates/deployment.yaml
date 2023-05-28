@@ -13,11 +13,8 @@ spec:
       {{- include "test.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/cm.yaml") . | sha256sum }}
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
         {{- include "test.selectorLabels" . | nindent 8 }}
     spec:
