@@ -24,7 +24,7 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-job: new5
+job: job6
 
 podSecurityContext: {}
   # fsGroup: 2000
