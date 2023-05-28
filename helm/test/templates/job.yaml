@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-{{ print $.Template.BasePath "/script.yaml" }}
+  name: test-job
   annotations: 
     cm: {{ .Values.job | toYaml | sha256sum }}
     checksum/config: {{ include (print $.Template.BasePath "/script.yaml") . | sha256sum }}
