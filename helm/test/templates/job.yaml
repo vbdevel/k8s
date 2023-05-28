@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: job-{{ include "test.fullname" . }}
   annotations: 
-    cm: {{ .Values.job }}
+    cm: {{ .Values.job | toYaml | sha256sum }}
 spec:
   backoffLimit: 2
   activeDeadlineSeconds: 60
