@@ -1,9 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-{{ include "test.fullname" . }}
+  name: job-{{ print $.Template.BasePath "/script.yaml" }}
   annotations: 
     cm: {{ .Values.job | toYaml | sha256sum }}
+    checksum/config: {{ include (print $.Template.BasePath "/script.yaml") . | sha256sum }}
 spec:
   backoffLimit: 2
   activeDeadlineSeconds: 60
