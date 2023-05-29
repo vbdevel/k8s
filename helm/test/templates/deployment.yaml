@@ -15,7 +15,7 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/cm.yaml") . | sha256sum }}
-  	argocd.argoproj.io/sync-wave: "3"
+        argocd.argoproj.io/sync-wave: "3"
       labels:
         {{- include "test.selectorLabels" . | nindent 8 }}
     spec:
