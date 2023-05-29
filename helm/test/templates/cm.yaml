@@ -2,6 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: test-{{ include "test.fullname" . }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 data:
   ENV: dev4
   test.sh: |
