@@ -25,6 +25,8 @@ serviceAccount:
 
 podAnnotations: {}
 job: job6
+queries: "<mvc>{{ .Values.short }}"
+short: "mvc-short"
 
 podSecurityContext: {}
   # fsGroup: 2000

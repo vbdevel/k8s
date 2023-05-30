@@ -6,6 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 data:
   ENV: dev4
+  Q: {{ tpl .Values.queries . }}
   test.sh: |
     #!/bin/bash 
 
