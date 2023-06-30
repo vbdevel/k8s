@@ -44,12 +44,6 @@ spec:
             httpGet:
               path: /
               port: http
-          env:
-            - name: environment
-              valueFrom:
-                configMapKeyRef:
-                  name: test-{{ include "test.fullname" . }}
-                  key: ENV
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
