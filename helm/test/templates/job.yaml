@@ -18,12 +18,12 @@ spec:
         - -c
         - /scrpt/test.sh
         volumeMounts:
-        - name: config-volume
+        - name: config-volume-2
           mountPath: /scrpt
       volumes:
-      - name: config-volume
+      - name: config-volume-2
         configMap:
-          name: script-test  
+          name: script-test
           defaultMode: 0555 
       restartPolicy: Never
 
