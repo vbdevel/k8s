@@ -5,5 +5,5 @@ metadata:
 data:
   test.sh: |
     echo "start {{ .Values.job }}"
-    sleep 10
+    sleep 15
     pwd
