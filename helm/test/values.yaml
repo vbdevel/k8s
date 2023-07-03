@@ -24,7 +24,7 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-job: job7
+job: job8
 queries: "<mvc>{{ .Values.short }}"
 short: "mvc-short"
 
