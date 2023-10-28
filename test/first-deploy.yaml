@@ -5,7 +5,7 @@ metadata:
     app: test-app
   name: test-deploy
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: test-pod
@@ -19,13 +19,15 @@ spec:
       containers:
         - name: web
           image: nginx
+          volumeMounts:
+          - name: index-file
+            mountPath: /opt/index.html
+            subPath: first
           ports:
             - name: web80
               containerPort: 80
               protocol: TCP
-          env: 
-            - name: environment
-              valueFrom:
-                configMapKeyRef:
-                  name: test-cm
-                  key: ENV
+      volumes:
+        - name: index-file
+          configMap:
+            name: test-cm

@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: test-cm
 data:
-  ENV: dev
+  first: preved from first 
+  second: preved from second
