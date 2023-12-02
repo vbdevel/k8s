@@ -17,7 +17,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: my-certificate
-  namespace: default
 spec:
   secretName: my-https-secret
   issuerRef:

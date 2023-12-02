@@ -2,7 +2,6 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: global-gw
-  namespace: default
 spec:
   selector:
     istio: ingressgateway # используйте istio-дефолтный шлюз
@@ -21,4 +20,4 @@ spec:
       mode: SIMPLE
       credentialName: my-https-secret
     hosts:
-    - "*"
+    - "first.wdb.com.ua"
