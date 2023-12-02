@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: first-deployment
+  name: first-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-app
+  template:
+    metadata:
+      labels:
+        app: first-app
+    spec:
+      containers:
+        - name: web-first
+          image: nginx
+          volumeMounts:
+          - name: index-file
+            mountPath: /usr/share/nginx/html/index.html
+            subPath: first
+          - name: pvc
+            mountPath: "/opt"
+            name: first-volume
+
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      volumes:
+        - name: index-file
+          configMap:
+            name: first-config
+        - name: first-volume
+          persistentVolumeClaim:
+            claimName: pvc2

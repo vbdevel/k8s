@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-svc-cluster
+spec:
+  selector:
+    app: first-app
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80 # Порт, который будет открыт на сервисе
+      targetPort: 80 # Порт в подах, к которому будет направлен трафик
+

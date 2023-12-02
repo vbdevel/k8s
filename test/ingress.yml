@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: first-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    cert-manager.io/issuer: letsencrypt-production
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: first.wdb.com.ua
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: first-svc-cluster 
+            port:
+              number: 80
+  - host: second.wdb.com.ua
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: second-svc-cluster
+            port:
+              number: 80
+  - host: test.wdb.com.ua
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: third-svc-balancer
+            port:
+              number: 80
+
+  tls:
+  - hosts:
+    - first.wdb.com.ua
+    - second.wdb.com.ua
+    secretName: test-ingress-app

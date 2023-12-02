@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: third-config
+data:
+  third: preved from THIRD
+

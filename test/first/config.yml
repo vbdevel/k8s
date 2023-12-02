@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: first-config
+data:
+  first: preved from FIRST
+

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: second-config
+data:
+  first: preved from first 
+  second: preved from second
