@@ -1,0 +1,63 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test-virtualservice
+  namespace: default
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - global-gw
+  http:
+  - route:
+    - destination:
+        host: first-svc-cluster
+        port:
+          number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: first-virtualservice
+  namespace: default
+spec:
+  hosts:
+  - "first.wdb.com.ua"
+  gateways:
+  - global-gw
+  http:
+  - route:
+    - destination:
+        host: first-svc-cluster
+        port:
+          number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: second-virtualservice
+  namespace: default
+spec:
+  hosts:
+  - "second.wdb.com.ua"
+  gateways:
+  - global-gw
+  http:
+  - route:
+    - destination:
+        host: first-svc-cluster
+        port:
+          number: 80
+      weight: 30
+    - destination:
+        host: second-svc-cluster
+        port:
+          number: 80
+      weight: 70
+
+  # http:
+  # - route:
+  #   - destination:
+  #       host: second-svc-cluster
+  #       port:
+  #         number: 80

@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: first-app
+        version: "0.1"
     spec:
       containers:
         - name: web-first
