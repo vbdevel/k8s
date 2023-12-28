@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-deployment
+  name: test-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+        version: "0.1"
+    spec:
+      containers:
+        - name: test
+          image: nginx
+          volumeMounts:
+          - name: pvc
+            mountPath: "/opt"
+            name: first-volume
+
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      volumes:
+        - name: first-volume
+          persistentVolumeClaim:
+            claimName: pvc-test
