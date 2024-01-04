@@ -1,0 +1,73 @@
+helm install grafana grafana/grafana -n monitoring
+NAME: grafana
+LAST DEPLOYED: Sun Dec 31 16:28:38 2023
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   grafana.monitoring.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+     export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+     kubectl --namespace monitoring port-forward $POD_NAME 3000
+
+3. Login with the password from step 1 and the username: admin
+#################################################################################
+######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+######            the Grafana pod is terminated.                            #####
+#################################################################################
+
+
+helm upgrade grafana grafana/grafana -n monitoring --set persistence.enabled=true,persistence.storageClassName="longhorn",persistence.existingClaim="grafana-pvc"
+Release "grafana" has been upgraded. Happy Helming!
+NAME: grafana
+LAST DEPLOYED: Mon Jan  1 16:25:51 2024
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 2
+NOTES:
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   grafana.monitoring.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+     export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+     kubectl --namespace monitoring port-forward $POD_NAME 3000
+
+3. Login with the password from step 1 and the username: admin
+
+################################################
+
+helm install grafana grafana/grafana -n monitoring -f grafana.yaml 
+NAME: grafana
+LAST DEPLOYED: Mon Jan  1 16:52:06 2024
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   grafana.monitoring.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+     export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+     kubectl --namespace monitoring port-forward $POD_NAME 3000
+
+3. Login with the password from step 1 and the username: admin
