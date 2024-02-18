@@ -1,0 +1,29 @@
+helm install fluentd fluent/fluentd -n logging 
+NAME: fluentd
+LAST DEPLOYED: Sun Jan  7 03:23:59 2024
+NAMESPACE: logging
+STATUS: deployed
+REVISION: 1
+NOTES:
+Get Fluentd build information by running these commands:
+
+export POD_NAME=$(kubectl get pods --namespace logging -l "app.kubernetes.io/name=fluentd,app.kubernetes.io/instance=fluentd" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace logging port-forward $POD_NAME 24231:24231
+curl http://127.0.0.1:24231/metrics
+
+
+
+
+helm upgrade fluentd fluent/fluentd -n logging -f fluentd_values.yaml
+Release "fluentd" has been upgraded. Happy Helming!
+NAME: fluentd
+LAST DEPLOYED: Sun Jan  7 04:02:00 2024
+NAMESPACE: logging
+STATUS: deployed
+REVISION: 6
+NOTES:
+Get Fluentd build information by running these commands:
+
+export POD_NAME=$(kubectl get pods --namespace logging -l "app.kubernetes.io/name=fluentd,app.kubernetes.io/instance=fluentd" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace logging port-forward $POD_NAME 24231:24231
+curl http://127.0.0.1:24231/metrics
