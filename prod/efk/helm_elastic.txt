@@ -1,0 +1,15 @@
+helm install elasticsearch --version 8.5.1 elastic/elasticsearch -f esvalues.yaml -n logging
+NAME: elasticsearch
+LAST DEPLOYED: Sat Jan  6 23:16:16 2024
+NAMESPACE: logging
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Watch all cluster members come up.
+  $ kubectl get pods --namespace=logging -l app=elasticsearch-master -w
+2. Retrieve elastic user's password.
+  $ kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 -d
+3. Test cluster health using Helm test.
+  $ helm --namespace=logging test elasticsearch
+
+

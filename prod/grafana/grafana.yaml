@@ -27,3 +27,5 @@ persistence:
     ## here and the sum of memory limits of all containers in a pod
     ##
     # sizeLimit: 300Mi
+plugins:
+  - grafana-piechart-panel
