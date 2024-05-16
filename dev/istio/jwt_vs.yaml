@@ -8,13 +8,13 @@ spec:
   gateways:
   - global-gw
   http:
-  - match:
-    - headers:
-        dbg:
-          exact: "filtr"
-    route:
-    - destination:
-        host: second-svc-cluster.default.svc.cluster.local
+#  - match:
+#    - headers:
+#        dbg:
+#          exact: "filtr2"
+#    route:
+#    - destination:
+#        host: second-svc-cluster.default.svc.cluster.local
   - match:
       - uri:
           prefix: /  # Перехват всех остальных запросов

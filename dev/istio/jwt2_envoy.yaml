@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: EnvoyFilter
 metadata:
-  name: add-dbg-header
+  name: jwt-header-injector
   namespace: default
 spec:
   workloadSelector:
@@ -10,21 +10,22 @@ spec:
   configPatches:
   - applyTo: HTTP_FILTER
     match:
-      context: SIDECAR_INBOUND  # Это применяет фильтр к входящему трафику для подов с меткой `first-app`
+      context: GATEWAY
       listener:
+        portNumber: 80
         filterChain:
           filter:
             name: "envoy.filters.network.http_connection_manager"
+            subFilter:
+              name: "envoy.filters.http.jwt_authn"
     patch:
       operation: INSERT_BEFORE
       value:
         name: envoy.filters.http.lua
         typed_config:
-          '@type': type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+          "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
           inlineCode: |
             function envoy_on_request(request_handle)
               request_handle:logInfo("111 Lua filter started")
               -- Добавляем заголовок "debug" со значением "filtr"
               request_handle:headers():add("debug", "filtr")
-            end
-
