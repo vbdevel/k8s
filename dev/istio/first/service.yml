@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-svc-cluster
+spec:
+  selector:
+    app: first-app
+  type: ClusterIP
+  ports:
+  - name: http2
+    port: 80
+    targetPort: 80
+

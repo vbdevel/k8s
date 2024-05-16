@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: add-dbg-header
+  namespace: default
+spec:
+  workloadSelector:
+    labels:
+      app: first-app
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_INBOUND  # Это применяет фильтр к входящему трафику для подов с меткой `first-app`
+      listener:
+        filterChain:
+          filter:
+            name: "envoy.filters.network.http_connection_manager"
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        name: envoy.filters.http.lua
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+          inlineCode: |
+            function envoy_on_request(request_handle)
+              -- Добавляем заголовок "dbg" со значением "filtr"
+              request_handle:headers():add("dbg", "filtr")
+            end
+

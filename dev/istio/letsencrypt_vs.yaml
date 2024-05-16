@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: cert-manager
+  namespace: default  # Убедитесь, что namespace совпадает с namespace Gateway
+spec:
+  gateways:
+  - global-gw
+  hosts:
+  - "first.wdb.com.ua"
+  - "second.wdb.com.ua"
+  http:
+  - match:
+    - uri:
+        prefix: /.well-known/acme-challenge/
+    route:
+    - destination:
+        host: cert-manager.cert-manager.svc.cluster.local
+        port:
+          number: 9402

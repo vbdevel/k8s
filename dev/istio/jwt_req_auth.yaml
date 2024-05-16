@@ -1,0 +1,13 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "RequestAuthentication"
+metadata:
+  name: jwt-auth
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      app: jwt-app
+  jwtRules:
+  - issuer: "https://auth.wdb.com.ua"
+    jwks: '{"keys":[{"kty":"oct","k":"XnLFgX1EvdRu/Ike/50DWDVlQAhurlHuqV7xK4O+2OA=","alg":"HS256"}]}'
+

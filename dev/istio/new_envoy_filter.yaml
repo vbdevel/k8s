@@ -1,0 +1,36 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: custom-wasm-routing
+  namespace: istio-system
+spec:
+  workloadSelector:
+    labels:
+      istio: ingressgateway  # Это должно соответствовать метке вашего шлюза
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: GATEWAY
+        listener:
+          portNumber: 443
+          filterChain:
+            filter:
+              name: "envoy.filters.network.http_connection_manager"
+              subFilter:
+                name: "envoy.filters.http.router"
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: "envoy.filters.http.wasm"
+          typedConfig:
+            "@type": "type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm"
+            config:
+              vmConfig:
+                vmId: "custom_routing_vm"
+                runtime: "envoy.wasm.runtime.v8"
+                code:
+                  remote:
+                    httpUri:
+                      uri: "http://third-svc-balancer.default.svc.cluster.local/wasm_routing_bg.wasm"
+                      timeout: 10s
+

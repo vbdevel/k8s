@@ -1,0 +1,68 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: jwt-header-injector
+  namespace: default
+spec:
+  workloadSelector:
+    labels:
+      app: first-app
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: GATEWAY
+      listener:
+        portNumber: 80
+        filterChain:
+          filter:
+            name: "envoy.filters.network.http_connection_manager"
+            subFilter:
+              name: "envoy.filters.http.jwt_authn"
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        name: envoy.filters.http.lua
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+          inlineCode: |
+            function envoy_on_request(request_handle)
+                request_handle:logInfo("111 Lua filter started")
+                -- Получаем токен JWT из заголовка Authorization
+                local headers = request_handle:headers()
+                local token = headers:get("authorization")
+
+                if token then
+                    -- Обычно токен представлен как 'Bearer <token>', разделяем строку, чтобы получить часть <token>
+                    local _, _, jwt = string.find(token, "Bearer%s+(.+)")
+
+                    if jwt then
+                        -- Делим JWT на части
+                        local dot_index = string.find(jwt, "%.")
+                        if dot_index then
+                            local base64url_payload = string.sub(jwt, dot_index + 1)
+                            local second_dot_index = string.find(base64url_payload, "%.")
+                            if second_dot_index then
+                                base64url_payload = string.sub(base64url_payload, 1, second_dot_index - 1)
+                            end
+
+                            -- Замена base64url на base64
+                            base64url_payload = base64url_payload:gsub("-", "+"):gsub("_", "/")
+
+                            -- Декодируем payload из Base64
+                            local payload_json = request_handle:base64Decode(base64url_payload)
+
+                            -- Преобразуем JSON в объект
+                            local payload = request_handle:parseJson(payload_json)
+
+                            -- Извлекаем имя сервиса из payload
+                            local service_name = payload["service"]
+
+                            if service_name then
+                                -- Добавляем имя сервиса в заголовки для дальнейшей маршрутизации
+                                headers:add("service-name", service_name)
+                            end
+                        end
+                    end
+                end
+                headers:add("service-name", "first")
+            end

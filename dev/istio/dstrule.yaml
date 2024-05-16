@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: enable-http2
+  namespace: istio-system
+spec:
+  host: first-svc-cluster.default.svc.cluster.local  # Используйте точное имя сервиса, который обращается к вашему поду Nginx
+  subsets:
+    - labels:
+        version: 24.3.0.1
+      name: v24301
+    - labels:
+        version: 24.4.0.1
+      name: v24401
+  trafficPolicy:
+    connectionPool:
+      http:
+        http2MaxRequests: 1024
+        maxRequestsPerConnection: 1

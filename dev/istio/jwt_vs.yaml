@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: jwt-service
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - global-gw
+  http:
+  - match:
+    - headers:
+        dbg:
+          exact: "filtr"
+    route:
+    - destination:
+        host: second-svc-cluster.default.svc.cluster.local
+  - match:
+      - uri:
+          prefix: /  # Перехват всех остальных запросов
+    route:
+      - destination:
+          host: first-svc-cluster.default.svc.cluster.local  # Сервис по умолчанию
+          port:
+            number: 80
