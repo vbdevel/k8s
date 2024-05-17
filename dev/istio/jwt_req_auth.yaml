@@ -1,13 +1,12 @@
-apiVersion: "security.istio.io/v1beta1"
-kind: "RequestAuthentication"
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
 metadata:
   name: jwt-auth
   namespace: istio-system
 spec:
   selector:
     matchLabels:
-      app: jwt-app
+      app: first-app
   jwtRules:
-  - issuer: "https://auth.wdb.com.ua"
-    jwks: '{"keys":[{"kty":"oct","k":"XnLFgX1EvdRu/Ike/50DWDVlQAhurlHuqV7xK4O+2OA=","alg":"HS256"}]}'
-
+  - issuer: "https://dev-176hl1mzfw8138sm.us.auth0.com/"
+    jwksUri: "https://dev-176hl1mzfw8138sm.us.auth0.com/.well-known/jwks.json"

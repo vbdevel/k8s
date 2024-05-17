@@ -20,5 +20,5 @@ spec:
           image: vbvit/http2-server:0.2
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8083
               protocol: TCP
