@@ -104,7 +104,8 @@ spec:
                               local service_name = payload["service"]
                               if service_name then
                                   request_handle:logInfo("Service name: " .. service_name)
-                                  request_handle:headers():add("service", service_name)
+                                  request_handle:headers():add("SRV", service_name)
+                                  request_handle:logInfo("Service header added: " .. service_name)
                               else
                                   request_handle:logInfo("Service name not found in payload")
                               end
