@@ -1,0 +1,1029 @@
+2024-05-19T12:39:59.453042Z	info	FLAG: --concurrency="0"
+2024-05-19T12:39:59.453314Z	info	FLAG: --domain="default.svc.cluster.local"
+2024-05-19T12:39:59.453391Z	info	FLAG: --help="false"
+2024-05-19T12:39:59.453574Z	info	FLAG: --log_as_json="false"
+2024-05-19T12:39:59.455205Z	info	FLAG: --log_caller=""
+2024-05-19T12:39:59.455346Z	info	FLAG: --log_output_level="default:info"
+2024-05-19T12:39:59.455364Z	info	FLAG: --log_rotate=""
+2024-05-19T12:39:59.455369Z	info	FLAG: --log_rotate_max_age="30"
+2024-05-19T12:39:59.455372Z	info	FLAG: --log_rotate_max_backups="1000"
+2024-05-19T12:39:59.455375Z	info	FLAG: --log_rotate_max_size="104857600"
+2024-05-19T12:39:59.455378Z	info	FLAG: --log_stacktrace_level="default:none"
+2024-05-19T12:39:59.455388Z	info	FLAG: --log_target="[stdout]"
+2024-05-19T12:39:59.455393Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2024-05-19T12:39:59.455395Z	info	FLAG: --outlierLogPath=""
+2024-05-19T12:39:59.455399Z	info	FLAG: --profiling="true"
+2024-05-19T12:39:59.455402Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2024-05-19T12:39:59.455404Z	info	FLAG: --proxyLogLevel="warning"
+2024-05-19T12:39:59.455407Z	info	FLAG: --serviceCluster="istio-proxy"
+2024-05-19T12:39:59.455410Z	info	FLAG: --stsPort="0"
+2024-05-19T12:39:59.455413Z	info	FLAG: --templateFile=""
+2024-05-19T12:39:59.455415Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2024-05-19T12:39:59.455420Z	info	FLAG: --vklog="0"
+2024-05-19T12:39:59.455423Z	info	Version 1.20.0-6869a6c2371e21c847d216065cf5c59863d01b4c-Clean
+2024-05-19T12:39:59.457528Z	info	Maximum file descriptors (ulimit -n): 1048576
+2024-05-19T12:39:59.457861Z	info	Proxy role	ips=[192.168.97.249] type=sidecar id=first-deploy-7ccf7bb959-9rzl2.default domain=default.svc.cluster.local
+2024-05-19T12:39:59.458068Z	info	Apply proxy config from env {}
+
+2024-05-19T12:39:59.460575Z	info	cpu limit detected as 2, setting concurrency
+2024-05-19T12:39:59.461102Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2024-05-19T12:39:59.461126Z	info	JWT policy is third-party-jwt
+2024-05-19T12:39:59.461131Z	info	using credential fetcher of JWT type in cluster.local trust domain
+2024-05-19T12:39:59.662817Z	info	Workload SDS socket not found. Starting Istio SDS Server
+2024-05-19T12:39:59.662863Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2024-05-19T12:39:59.662886Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2024-05-19T12:39:59.663008Z	info	Opening status port 15020
+2024-05-19T12:39:59.683059Z	info	ads	All caches have been synced up in 230.499088ms, marking server ready
+2024-05-19T12:39:59.683337Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2024-05-19T12:39:59.684860Z	info	Pilot SAN: [istiod.istio-system.svc]
+2024-05-19T12:39:59.685742Z	info	Starting proxy agent
+2024-05-19T12:39:59.685807Z	info	starting
+2024-05-19T12:39:59.685831Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev.json --drain-time-s 45 --drain-strategy immediate --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --allow-unknown-static-fields --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n %g:%#	%v	thread=%t -l warning --component-log-level misc:error --concurrency 2]
+2024-05-19T12:39:59.689148Z	info	sds	Starting SDS grpc server
+2024-05-19T12:39:59.689331Z	info	starting Http service at 127.0.0.1:15004
+2024-05-19T12:39:59.760407Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2024-05-19T12:39:59.799611Z	info	cache	generated new workload certificate	latency=116.293205ms ttl=23h59m59.200396938s
+2024-05-19T12:39:59.799724Z	info	cache	Root cert has changed, start rotating root cert
+2024-05-19T12:39:59.799845Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:0 Version:
+2024-05-19T12:39:59.799988Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.200015532s
+2024-05-19T12:39:59.808322Z	info	ads	ADS: new connection for node:first-deploy-7ccf7bb959-9rzl2.default-1
+2024-05-19T12:39:59.808409Z	info	cache	returned workload certificate from cache	ttl=23h59m59.191592531s
+2024-05-19T12:39:59.808668Z	info	ads	ADS: new connection for node:first-deploy-7ccf7bb959-9rzl2.default-2
+2024-05-19T12:39:59.808863Z	info	ads	SDS: PUSH request for node:first-deploy-7ccf7bb959-9rzl2.default resources:1 size:4.0kB resource:default
+2024-05-19T12:39:59.808865Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.191136394s
+2024-05-19T12:39:59.809301Z	info	ads	SDS: PUSH request for node:first-deploy-7ccf7bb959-9rzl2.default resources:1 size:1.1kB resource:ROOTCA
+2024-05-19T12:40:00.306713Z	info	Readiness succeeded in 862.544812ms
+2024-05-19T12:40:00.307273Z	info	Envoy proxy is ready
+2024-05-19T12:40:28.194661Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"13","StreamId":"8109600258415838094"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:40:28 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:40:28.194762Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"13","StreamId":"8109600258415838094"] Codec completed encoding stream.	thread=14
+2024-05-19T12:40:28.303274Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"14"] new stream	thread=23
+2024-05-19T12:40:28.303385Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"14","StreamId":"1293274692845143743"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:40:28.303400Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"14","StreamId":"1293274692845143743"] request end stream	thread=23
+2024-05-19T12:40:28.303802Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"14","StreamId":"1293274692845143743"] closing connection due to connection close header	thread=23
+2024-05-19T12:40:28.303818Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"14","StreamId":"1293274692845143743"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:40:28 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:40:28.303835Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"14","StreamId":"1293274692845143743"] Codec completed encoding stream.	thread=23
+2024-05-19T12:40:35.568978Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"15"] new stream	thread=22
+2024-05-19T12:40:35.569096Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"15","StreamId":"2651708292147362632"] request headers complete (end_stream=true):
+':method', 'GET'
+':scheme', 'https'
+':authority', 'first.wdb.com.ua'
+':path', '/'
+'user-agent', 'curl/8.1.2'
+'accept', '*/*'
+'authorization', 'Bearer  eyJhbGciOiJSUzI1NiIsImtpZCI6Ilk0M1JUQmRZWFdmSkQwSGxjc1Q1T09PZDlJREpBQXpCUnFKeG5jTDZTTEkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vandrcy1zdmMtY2x1c3RlciIsInN1YiI6IjlsMG4wRDZzMGpsMTRadjRCaDVlbW5jcGpWTlpFaEpBQGNsaWVudHMiLCJhdWQiOiJodHRwczovL2ZpcnN0LndkYi5jb20udWEiLCJpYXQiOjE3MTYxMjA3NTEsImV4cCI6MTcxNjEyNDM1MSwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXpwIjoiOWwwbjBENnMwamwxNFp2NEJoNWVtbmNwalZOWkVoSkEiLCJzZXJ2aWNlIjoid2FsbGV0In0.WR4XpSQL5f8vCG9YbRjAejiQ-uNySp8EkAKjLOOKjWR0NK-HaD1O0fEMFE7Iy01Sz_EsY3MIOyVk9kASDtSvd-hGED2NKH6asnOn0Xt8XSXdoZB8k88gLGoke5DVIhi8sOivDSaVQFw-YRB3TT7y5Cpt_3nhdN4D4MUFNm611MHH_dFNLbwHOVDJUdHOzyYO1FP6dxBogo5_m82YZw7yc6QTXQ-DRZPLrkrEM0ooOcTCIkKCG1TGL8zyQus7UYW_F4gS7Com3ZHPNKUHsfuLy7NJfFb-n-pUabN_oxT_9zamqroH-KuW2qbvv4YcA0kLZUWvXE1MNRfnV0Jt-DG0dA'
+'x-forwarded-for', '192.168.39.0'
+'x-forwarded-proto', 'https'
+'x-envoy-internal', 'true'
+'x-request-id', '7f9698f6-bfae-9321-8345-481b01e6e918'
+'x-envoy-decorator-operation', 'first-svc-cluster.default.svc.cluster.local:80/*'
+'x-envoy-peer-metadata-id', 'router~192.168.97.216~istio-ingressgateway-56b49989f4-dvxq4.istio-system~istio-system.svc.cluster.local'
+'x-envoy-peer-metadata', 'ChoKCkNMVVNURVJfSUQSDBoKS3ViZXJuZXRlcwogCgxJTlNUQU5DRV9JUFMSEBoOMTkyLjE2OC45Ny4yMTYKGQoNSVNUSU9fVkVSU0lPThIIGgYxLjIwLjAKnAMKBkxBQkVMUxKRAyqOAwodCgNhcHASFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKEwoFY2hhcnQSChoIZ2F0ZXdheXMKFAoIaGVyaXRhZ2USCBoGVGlsbGVyCjYKKWluc3RhbGwub3BlcmF0b3IuaXN0aW8uaW8vb3duaW5nLXJlc291cmNlEgkaB3Vua25vd24KGQoFaXN0aW8SEBoOaW5ncmVzc2dhdGV3YXkKGQoMaXN0aW8uaW8vcmV2EgkaB2RlZmF1bHQKMAobb3BlcmF0b3IuaXN0aW8uaW8vY29tcG9uZW50EhEaD0luZ3Jlc3NHYXRld2F5cwoSCgdyZWxlYXNlEgcaBWlzdGlvCjkKH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKLwojc2VydmljZS5pc3Rpby5pby9jYW5vbmljYWwtcmV2aXNpb24SCBoGbGF0ZXN0CiIKF3NpZGVjYXIuaXN0aW8uaW8vaW5qZWN0EgcaBWZhbHNlChoKB01FU0hfSUQSDxoNY2x1c3Rlci5sb2NhbAovCgROQU1FEicaJWlzdGlvLWluZ3Jlc3NnYXRld2F5LTU2YjQ5OTg5ZjQtZHZ4cTQKGwoJTkFNRVNQQUNFEg4aDGlzdGlvLXN5c3RlbQpdCgVPV05FUhJUGlJrdWJlcm5ldGVzOi8vYXBpcy9hcHBzL3YxL25hbWVzcGFjZXMvaXN0aW8tc3lzdGVtL2RlcGxveW1lbnRzL2lzdGlvLWluZ3Jlc3NnYXRld2F5CicKDVdPUktMT0FEX05BTUUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXk='
+'x-envoy-attempt-count', '1'
+'x-b3-traceid', '1fb1b339b98e283ab093f60ae8415271'
+'x-b3-spanid', 'b093f60ae8415271'
+'x-b3-sampled', '1'
+	thread=22
+2024-05-19T12:40:35.569131Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"15","StreamId":"2651708292147362632"] request end stream	thread=22
+2024-05-19T12:40:35.569572Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 Lua filter started	thread=22
+2024-05-19T12:40:35.569594Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:39	coroutine finished	thread=22
+2024-05-19T12:40:35.615984Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"15","StreamId":"2651708292147362632"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'application/json'
+'content-length', '739'
+'date', 'Sun, 19 May 2024 12:40:35 GMT'
+'server', 'istio-envoy'
+'x-envoy-upstream-service-time', '45'
+'x-envoy-peer-metadata-id', 'sidecar~192.168.97.249~first-deploy-7ccf7bb959-9rzl2.default~default.svc.cluster.local'
+'x-envoy-peer-metadata', 'Ch0KDkFQUF9DT05UQUlORVJTEgsaCXdlYi1maXJzdAoaCgpDTFVTVEVSX0lEEgwaCkt1YmVybmV0ZXMKIAoMSU5TVEFOQ0VfSVBTEhAaDjE5Mi4xNjguOTcuMjQ5ChkKDUlTVElPX1ZFUlNJT04SCBoGMS4yMC4wCsIBCgZMQUJFTFMStwEqtAEKEgoDYXBwEgsaCWZpcnN0LWFwcAokChlzZWN1cml0eS5pc3Rpby5pby90bHNNb2RlEgcaBWlzdGlvCi4KH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSCxoJZmlyc3QtYXBwCjEKI3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLXJldmlzaW9uEgoaCDI0LjQuMC4xChUKB3ZlcnNpb24SChoIMjQuNC4wLjEKGgoHTUVTSF9JRBIPGg1jbHVzdGVyLmxvY2FsCicKBE5BTUUSHxodZmlyc3QtZGVwbG95LTdjY2Y3YmI5NTktOXJ6bDIKFgoJTkFNRVNQQUNFEgkaB2RlZmF1bHQKUAoFT1dORVISRxpFa3ViZXJuZXRlczovL2FwaXMvYXBwcy92MS9uYW1lc3BhY2VzL2RlZmF1bHQvZGVwbG95bWVudHMvZmlyc3QtZGVwbG95Ch8KDVdPUktMT0FEX05BTUUSDhoMZmlyc3QtZGVwbG95'
+	thread=22
+2024-05-19T12:40:35.616172Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"15","StreamId":"2651708292147362632"] Codec completed encoding stream.	thread=22
+[2024-05-19T12:40:35.569Z] "GET / HTTP/2" 200 - via_upstream - "-" 0 739 47 45 "192.168.39.0" "curl/8.1.2" "7f9698f6-bfae-9321-8345-481b01e6e918" "first.wdb.com.ua" "192.168.97.249:8083" inbound|8083|| 127.0.0.6:32945 192.168.97.249:8083 192.168.39.0:0 outbound_.80_._.first-svc-cluster.default.svc.cluster.local default
+2024-05-19T12:40:37.934770Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:40:37.934887Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"5355765998185132199"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:40:37.934904Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"5355765998185132199"] request end stream	thread=23
+2024-05-19T12:40:37.935079Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:40:37.935143Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"3195114907086238650"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '96bdae76-b44f-452b-a8d1-513b3ed0d76a'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:40:37.935151Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"3195114907086238650"] request end stream	thread=14
+2024-05-19T12:40:37.935905Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"3195114907086238650"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:40:37 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:40:37.935930Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"3195114907086238650"] Codec completed encoding stream.	thread=14
+2024-05-19T12:40:37.936179Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"5355765998185132199"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:40:37 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:40:37.936349Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"5355765998185132199"] Codec completed encoding stream.	thread=23
+2024-05-19T12:40:39.930476Z	debug	envoy http external/envoy/source/common/http/async_client_impl.cc:106	async http request response headers (end_stream=true):
+':status', '202'
+'vary', 'Origin'
+'date', 'Sun, 19 May 2024 12:40:39 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+	thread=22
+2024-05-19T12:40:43.302672Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"18"] new stream	thread=22
+2024-05-19T12:40:43.302821Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"18","StreamId":"13158007416251504679"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=22
+2024-05-19T12:40:43.302887Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"18","StreamId":"13158007416251504679"] request end stream	thread=22
+2024-05-19T12:40:43.303390Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"18","StreamId":"13158007416251504679"] closing connection due to connection close header	thread=22
+2024-05-19T12:40:43.303458Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"18","StreamId":"13158007416251504679"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:40:43 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=22
+2024-05-19T12:40:43.303490Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"18","StreamId":"13158007416251504679"] Codec completed encoding stream.	thread=22
+2024-05-19T12:40:52.934501Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:40:52.934598Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"8474797590882937915"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:40:52.934617Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"8474797590882937915"] request end stream	thread=23
+2024-05-19T12:40:52.934815Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:40:52.934924Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"15767044294974836783"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '05a72ee4-0493-4275-80aa-c5434c5f48e9'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:40:52.934935Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"15767044294974836783"] request end stream	thread=14
+2024-05-19T12:40:52.935786Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"15767044294974836783"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:40:52 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:40:52.935813Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"15767044294974836783"] Codec completed encoding stream.	thread=14
+2024-05-19T12:40:52.936082Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"8474797590882937915"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:40:52 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:40:52.936136Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"8474797590882937915"] Codec completed encoding stream.	thread=23
+2024-05-19T12:40:58.303168Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"19"] new stream	thread=23
+2024-05-19T12:40:58.303380Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"19","StreamId":"18441407855516509366"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:40:58.303403Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"19","StreamId":"18441407855516509366"] request end stream	thread=23
+2024-05-19T12:40:58.303800Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"19","StreamId":"18441407855516509366"] closing connection due to connection close header	thread=23
+2024-05-19T12:40:58.303815Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"19","StreamId":"18441407855516509366"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:40:58 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:40:58.303822Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"19","StreamId":"18441407855516509366"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:07.934804Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:41:07.934904Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"18436032474762798445"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:41:07.934919Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"18436032474762798445"] request end stream	thread=23
+2024-05-19T12:41:07.935103Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:41:07.935146Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"15598844453920055084"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '3ad10332-19c6-49bb-91f3-0591d0011c48'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:41:07.935161Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"15598844453920055084"] request end stream	thread=14
+2024-05-19T12:41:07.935869Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"15598844453920055084"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:07 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:41:07.935894Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"15598844453920055084"] Codec completed encoding stream.	thread=14
+2024-05-19T12:41:07.936113Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"18436032474762798445"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:07 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:41:07.936148Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"18436032474762798445"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:13.302540Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"20"] new stream	thread=22
+2024-05-19T12:41:13.302632Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"20","StreamId":"6559489866439232447"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=22
+2024-05-19T12:41:13.302644Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"20","StreamId":"6559489866439232447"] request end stream	thread=22
+2024-05-19T12:41:13.303030Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"20","StreamId":"6559489866439232447"] closing connection due to connection close header	thread=22
+2024-05-19T12:41:13.303054Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"20","StreamId":"6559489866439232447"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:41:13 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=22
+2024-05-19T12:41:13.303065Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"20","StreamId":"6559489866439232447"] Codec completed encoding stream.	thread=22
+2024-05-19T12:41:22.935155Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:41:22.935264Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"6495030150946149994"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:41:22.935281Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"6495030150946149994"] request end stream	thread=23
+2024-05-19T12:41:22.935521Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:41:22.935557Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"600367406317963458"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '2369f25d-af57-448b-9551-327b206dd116'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:41:22.935563Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"600367406317963458"] request end stream	thread=14
+2024-05-19T12:41:22.936317Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"600367406317963458"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:22 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:41:22.936335Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"600367406317963458"] Codec completed encoding stream.	thread=14
+2024-05-19T12:41:22.936549Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"6495030150946149994"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:22 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:41:22.936595Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"6495030150946149994"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:28.302981Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"21"] new stream	thread=22
+2024-05-19T12:41:28.303060Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"21","StreamId":"5010152132238484750"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=22
+2024-05-19T12:41:28.303072Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"21","StreamId":"5010152132238484750"] request end stream	thread=22
+2024-05-19T12:41:28.303525Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"21","StreamId":"5010152132238484750"] closing connection due to connection close header	thread=22
+2024-05-19T12:41:28.303554Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"21","StreamId":"5010152132238484750"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:41:28 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=22
+2024-05-19T12:41:28.303572Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"21","StreamId":"5010152132238484750"] Codec completed encoding stream.	thread=22
+2024-05-19T12:41:37.934759Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:41:37.934867Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"4821518038346271480"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:41:37.934879Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"4821518038346271480"] request end stream	thread=23
+2024-05-19T12:41:37.935078Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:41:37.935116Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"1320219018127419643"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', 'b686d61b-f117-40a0-b7e7-9bf8ff879e30'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:41:37.935125Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"1320219018127419643"] request end stream	thread=14
+2024-05-19T12:41:37.935835Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"1320219018127419643"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:37 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:41:37.935870Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"1320219018127419643"] Codec completed encoding stream.	thread=14
+2024-05-19T12:41:37.936065Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"4821518038346271480"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:37 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:41:37.936118Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"4821518038346271480"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:43.303475Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"22"] new stream	thread=23
+2024-05-19T12:41:43.303546Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"22","StreamId":"2276769928543254211"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:41:43.303557Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"22","StreamId":"2276769928543254211"] request end stream	thread=23
+2024-05-19T12:41:43.304064Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"22","StreamId":"2276769928543254211"] closing connection due to connection close header	thread=23
+2024-05-19T12:41:43.304110Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"22","StreamId":"2276769928543254211"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:41:43 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:41:43.304129Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"22","StreamId":"2276769928543254211"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:52.935964Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:41:52.936041Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"5814258668752303930"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:41:52.936054Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"5814258668752303930"] request end stream	thread=23
+2024-05-19T12:41:52.936319Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:41:52.936424Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"4617985758984690606"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', 'acd20e5b-9ef4-4fc0-b837-697ba084d0bf'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:41:52.936461Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"4617985758984690606"] request end stream	thread=14
+2024-05-19T12:41:52.937263Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"4617985758984690606"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:52 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:41:52.937374Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"4617985758984690606"] Codec completed encoding stream.	thread=14
+2024-05-19T12:41:52.937658Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"5814258668752303930"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:41:52 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:41:52.937837Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"5814258668752303930"] Codec completed encoding stream.	thread=23
+2024-05-19T12:41:58.302631Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"23"] new stream	thread=23
+2024-05-19T12:41:58.302800Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"23","StreamId":"2302203938194293051"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:41:58.302822Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"23","StreamId":"2302203938194293051"] request end stream	thread=23
+2024-05-19T12:41:58.303363Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"23","StreamId":"2302203938194293051"] closing connection due to connection close header	thread=23
+2024-05-19T12:41:58.303425Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"23","StreamId":"2302203938194293051"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:41:58 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:41:58.303471Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"23","StreamId":"2302203938194293051"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:07.934922Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:42:07.935010Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"4466859511574777112"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:42:07.935025Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"4466859511574777112"] request end stream	thread=23
+2024-05-19T12:42:07.935295Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:42:07.935384Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"8670200818084402678"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '412ee38f-cf5b-490a-8b27-c1bb530c7a56'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:42:07.935425Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"8670200818084402678"] request end stream	thread=14
+2024-05-19T12:42:07.936204Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"8670200818084402678"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:07 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:42:07.936274Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"8670200818084402678"] Codec completed encoding stream.	thread=14
+2024-05-19T12:42:07.936528Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"4466859511574777112"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:07 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:42:07.936576Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"4466859511574777112"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:13.303268Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"24"] new stream	thread=23
+2024-05-19T12:42:13.303335Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"24","StreamId":"3232122646555469004"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:13.303344Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"24","StreamId":"3232122646555469004"] request end stream	thread=23
+2024-05-19T12:42:13.303704Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"24","StreamId":"3232122646555469004"] closing connection due to connection close header	thread=23
+2024-05-19T12:42:13.303719Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"24","StreamId":"3232122646555469004"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:42:13 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:13.303727Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"24","StreamId":"3232122646555469004"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:22.935443Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:42:22.935644Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"17734296139989077959"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:42:22.935732Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"17734296139989077959"] request end stream	thread=23
+2024-05-19T12:42:22.935997Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:42:22.936060Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"17835328255454041084"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '39c1224c-5c8e-49c7-acd4-da1f868de2fc'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:42:22.936076Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"17835328255454041084"] request end stream	thread=14
+2024-05-19T12:42:22.936805Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"17835328255454041084"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:22 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:42:22.936841Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"17835328255454041084"] Codec completed encoding stream.	thread=14
+2024-05-19T12:42:22.937068Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"17734296139989077959"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:22 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:42:22.937149Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"17734296139989077959"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:28.302680Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"25"] new stream	thread=23
+2024-05-19T12:42:28.302791Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"25","StreamId":"2731865248558098853"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:28.302806Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"25","StreamId":"2731865248558098853"] request end stream	thread=23
+2024-05-19T12:42:28.303293Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"25","StreamId":"2731865248558098853"] closing connection due to connection close header	thread=23
+2024-05-19T12:42:28.303311Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"25","StreamId":"2731865248558098853"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:42:28 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:28.303319Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"25","StreamId":"2731865248558098853"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:37.935389Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:42:37.935510Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"3925268392298833602"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:42:37.935557Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"3925268392298833602"] request end stream	thread=23
+2024-05-19T12:42:37.935865Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:42:37.935964Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"9500936993642657673"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', 'f413295d-f4f9-489a-9d0e-f5d0426a7858'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:42:37.935978Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"9500936993642657673"] request end stream	thread=14
+2024-05-19T12:42:37.936851Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"9500936993642657673"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:37 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:42:37.936891Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"9500936993642657673"] Codec completed encoding stream.	thread=14
+2024-05-19T12:42:37.937197Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"3925268392298833602"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:37 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:42:37.937233Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"3925268392298833602"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:43.302586Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"26"] new stream	thread=22
+2024-05-19T12:42:43.302681Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"26","StreamId":"4399752353890452945"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=22
+2024-05-19T12:42:43.302700Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"26","StreamId":"4399752353890452945"] request end stream	thread=22
+2024-05-19T12:42:43.303116Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"26","StreamId":"4399752353890452945"] closing connection due to connection close header	thread=22
+2024-05-19T12:42:43.303131Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"26","StreamId":"4399752353890452945"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:42:43 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=22
+2024-05-19T12:42:43.303139Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"26","StreamId":"4399752353890452945"] Codec completed encoding stream.	thread=22
+2024-05-19T12:42:52.934990Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:42:52.935061Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"1666211490504868580"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:42:52.935069Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"1666211490504868580"] request end stream	thread=23
+2024-05-19T12:42:52.935370Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:42:52.935430Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"11800990385474386235"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '7045253f-da2c-45f5-8250-54b07f88d1d0'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:42:52.935440Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"11800990385474386235"] request end stream	thread=14
+2024-05-19T12:42:52.936190Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"11800990385474386235"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:52 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:42:52.936213Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"11800990385474386235"] Codec completed encoding stream.	thread=14
+2024-05-19T12:42:52.936425Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"1666211490504868580"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:42:52 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:42:52.936454Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"1666211490504868580"] Codec completed encoding stream.	thread=23
+2024-05-19T12:42:58.302475Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"27"] new stream	thread=23
+2024-05-19T12:42:58.302593Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"27","StreamId":"11352670548343936510"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:58.302606Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"27","StreamId":"11352670548343936510"] request end stream	thread=23
+2024-05-19T12:42:58.303087Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"27","StreamId":"11352670548343936510"] closing connection due to connection close header	thread=23
+2024-05-19T12:42:58.303108Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"27","StreamId":"11352670548343936510"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:42:58 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=23
+2024-05-19T12:42:58.303118Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"27","StreamId":"11352670548343936510"] Codec completed encoding stream.	thread=23
+2024-05-19T12:43:07.934914Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:43:07.935079Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"15349605180896068705"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:43:07.935134Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"15349605180896068705"] request end stream	thread=23
+2024-05-19T12:43:07.935340Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:43:07.935381Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"4828619176035746442"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', 'cc797ef6-6151-4826-8910-b68f99d5c4b3'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:43:07.935387Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"4828619176035746442"] request end stream	thread=14
+2024-05-19T12:43:07.936219Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"4828619176035746442"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:43:07 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:43:07.936257Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"4828619176035746442"] Codec completed encoding stream.	thread=14
+2024-05-19T12:43:07.936456Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"15349605180896068705"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:43:07 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:43:07.936544Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"15349605180896068705"] Codec completed encoding stream.	thread=23
+2024-05-19T12:43:10.989113Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=14
+2024-05-19T12:43:10.989134Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=14
+2024-05-19T12:43:10.989138Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=14
+2024-05-19T12:43:10.989142Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=14
+2024-05-19T12:43:10.989142Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=22
+2024-05-19T12:43:10.989157Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=22
+2024-05-19T12:43:10.989161Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=22
+2024-05-19T12:43:10.989164Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=22
+2024-05-19T12:43:10.989173Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=22
+2024-05-19T12:43:10.989147Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=14
+2024-05-19T12:43:10.989243Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=23
+2024-05-19T12:43:10.989268Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=23
+2024-05-19T12:43:10.989288Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=23
+2024-05-19T12:43:10.989318Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=23
+2024-05-19T12:43:10.989356Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=23
+2024-05-19T12:43:10.989458Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=22
+2024-05-19T12:43:10.989476Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=14
+2024-05-19T12:43:10.989505Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=23
+2024-05-19T12:43:10.989609Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=14
+2024-05-19T12:43:10.989619Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=14
+2024-05-19T12:43:10.989620Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=22
+2024-05-19T12:43:10.989630Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=22
+2024-05-19T12:43:10.989651Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=23
+2024-05-19T12:43:10.992939Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=23
+2024-05-19T12:43:10.989666Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=14
+2024-05-19T12:43:10.993138Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=14
+2024-05-19T12:43:10.993201Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=14
+2024-05-19T12:43:10.993296Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=14
+2024-05-19T12:43:10.993399Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=14
+2024-05-19T12:43:10.993404Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=23
+2024-05-19T12:43:10.993538Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=23
+2024-05-19T12:43:10.993623Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=23
+2024-05-19T12:43:10.989668Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=22
+2024-05-19T12:43:10.993717Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=22
+2024-05-19T12:43:10.993435Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:225	envoy_on_response() function not found. Lua filter will not hook responses.	thread=14
+2024-05-19T12:43:10.993724Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=22
+2024-05-19T12:43:10.993823Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=23
+2024-05-19T12:43:10.993826Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=22
+2024-05-19T12:43:10.993896Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=22
+2024-05-19T12:43:10.993916Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=23
+2024-05-19T12:43:10.997306Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=14
+2024-05-19T12:43:10.997320Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=14
+2024-05-19T12:43:10.997323Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=14
+2024-05-19T12:43:10.997325Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=14
+2024-05-19T12:43:10.997331Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=14
+2024-05-19T12:43:10.997351Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=22
+2024-05-19T12:43:10.997369Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=22
+2024-05-19T12:43:10.997374Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=22
+2024-05-19T12:43:10.997378Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=22
+2024-05-19T12:43:10.997384Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=22
+2024-05-19T12:43:10.997454Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua13BufferWrapperE	thread=23
+2024-05-19T12:43:10.997513Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua18MetadataMapWrapperE	thread=23
+2024-05-19T12:43:10.997565Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua19MetadataMapIteratorE	thread=23
+2024-05-19T12:43:10.997666Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua17ConnectionWrapperE	thread=23
+2024-05-19T12:43:10.997542Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=14
+2024-05-19T12:43:10.997545Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=22
+2024-05-19T12:43:10.997866Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=22
+2024-05-19T12:43:10.997733Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions7Filters6Common3Lua20SslConnectionWrapperE	thread=23
+2024-05-19T12:43:10.998043Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16HeaderMapWrapperE	thread=23
+2024-05-19T12:43:10.997830Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=14
+2024-05-19T12:43:10.998169Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17HeaderMapIteratorE	thread=23
+2024-05-19T12:43:10.998241Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=23
+2024-05-19T12:43:10.998207Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=22
+2024-05-19T12:43:10.998188Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua17StreamInfoWrapperE	thread=14
+2024-05-19T12:43:10.998408Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=14
+2024-05-19T12:43:10.998412Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=22
+2024-05-19T12:43:10.998431Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=22
+2024-05-19T12:43:10.998417Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=14
+2024-05-19T12:43:10.998448Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=14
+2024-05-19T12:43:10.998454Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=22
+2024-05-19T12:43:10.998533Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua25DynamicMetadataMapWrapperE	thread=23
+2024-05-19T12:43:10.998573Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua26DynamicMetadataMapIteratorE	thread=23
+2024-05-19T12:43:10.998631Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua19StreamHandleWrapperE	thread=23
+2024-05-19T12:43:10.998647Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=14
+2024-05-19T12:43:10.998719Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=14
+2024-05-19T12:43:10.998722Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:225	envoy_on_response() function not found. Lua filter will not hook responses.	thread=14
+2024-05-19T12:43:10.998677Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=23
+2024-05-19T12:43:10.998941Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=23
+2024-05-19T12:43:10.999411Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.h:182	registering new type: N5Envoy10Extensions11HttpFilters3Lua16PublicKeyWrapperE	thread=22
+2024-05-19T12:43:10.999430Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:86	definition for 'envoy_on_response' not found in script	thread=22
+2024-05-19T12:43:13.303512Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"28"] new stream	thread=22
+2024-05-19T12:43:13.303638Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"28","StreamId":"15974031657756535446"] request headers complete (end_stream=true):
+':authority', '192.168.97.249:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.28'
+'accept', '*/*'
+'connection', 'close'
+	thread=22
+2024-05-19T12:43:13.303662Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"28","StreamId":"15974031657756535446"] request end stream	thread=22
+2024-05-19T12:43:13.304100Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1794	[Tags: "ConnectionId":"28","StreamId":"15974031657756535446"] closing connection due to connection close header	thread=22
+2024-05-19T12:43:13.304130Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"28","StreamId":"15974031657756535446"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Sun, 19 May 2024 12:43:13 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=22
+2024-05-19T12:43:13.304143Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"28","StreamId":"15974031657756535446"] Codec completed encoding stream.	thread=22
+2024-05-19T12:43:16.111972Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"29"] new stream	thread=22
+2024-05-19T12:43:16.112058Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"29","StreamId":"5109224888259454529"] request headers complete (end_stream=true):
+':method', 'GET'
+':scheme', 'https'
+':authority', 'first.wdb.com.ua'
+':path', '/'
+'user-agent', 'curl/8.1.2'
+'accept', '*/*'
+'authorization', 'Bearer  eyJhbGciOiJSUzI1NiIsImtpZCI6Ilk0M1JUQmRZWFdmSkQwSGxjc1Q1T09PZDlJREpBQXpCUnFKeG5jTDZTTEkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vandrcy1zdmMtY2x1c3RlciIsInN1YiI6IjlsMG4wRDZzMGpsMTRadjRCaDVlbW5jcGpWTlpFaEpBQGNsaWVudHMiLCJhdWQiOiJodHRwczovL2ZpcnN0LndkYi5jb20udWEiLCJpYXQiOjE3MTYxMjA3NTEsImV4cCI6MTcxNjEyNDM1MSwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXpwIjoiOWwwbjBENnMwamwxNFp2NEJoNWVtbmNwalZOWkVoSkEiLCJzZXJ2aWNlIjoid2FsbGV0In0.WR4XpSQL5f8vCG9YbRjAejiQ-uNySp8EkAKjLOOKjWR0NK-HaD1O0fEMFE7Iy01Sz_EsY3MIOyVk9kASDtSvd-hGED2NKH6asnOn0Xt8XSXdoZB8k88gLGoke5DVIhi8sOivDSaVQFw-YRB3TT7y5Cpt_3nhdN4D4MUFNm611MHH_dFNLbwHOVDJUdHOzyYO1FP6dxBogo5_m82YZw7yc6QTXQ-DRZPLrkrEM0ooOcTCIkKCG1TGL8zyQus7UYW_F4gS7Com3ZHPNKUHsfuLy7NJfFb-n-pUabN_oxT_9zamqroH-KuW2qbvv4YcA0kLZUWvXE1MNRfnV0Jt-DG0dA'
+'x-forwarded-for', '192.168.39.0'
+'x-forwarded-proto', 'https'
+'x-envoy-internal', 'true'
+'x-request-id', 'ac93e8da-aba8-949b-bc99-44423c0dacc4'
+'x-envoy-decorator-operation', 'first-svc-cluster.default.svc.cluster.local:80/*'
+'x-envoy-peer-metadata-id', 'router~192.168.97.216~istio-ingressgateway-56b49989f4-dvxq4.istio-system~istio-system.svc.cluster.local'
+'x-envoy-peer-metadata', 'ChoKCkNMVVNURVJfSUQSDBoKS3ViZXJuZXRlcwogCgxJTlNUQU5DRV9JUFMSEBoOMTkyLjE2OC45Ny4yMTYKGQoNSVNUSU9fVkVSU0lPThIIGgYxLjIwLjAKnAMKBkxBQkVMUxKRAyqOAwodCgNhcHASFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKEwoFY2hhcnQSChoIZ2F0ZXdheXMKFAoIaGVyaXRhZ2USCBoGVGlsbGVyCjYKKWluc3RhbGwub3BlcmF0b3IuaXN0aW8uaW8vb3duaW5nLXJlc291cmNlEgkaB3Vua25vd24KGQoFaXN0aW8SEBoOaW5ncmVzc2dhdGV3YXkKGQoMaXN0aW8uaW8vcmV2EgkaB2RlZmF1bHQKMAobb3BlcmF0b3IuaXN0aW8uaW8vY29tcG9uZW50EhEaD0luZ3Jlc3NHYXRld2F5cwoSCgdyZWxlYXNlEgcaBWlzdGlvCjkKH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKLwojc2VydmljZS5pc3Rpby5pby9jYW5vbmljYWwtcmV2aXNpb24SCBoGbGF0ZXN0CiIKF3NpZGVjYXIuaXN0aW8uaW8vaW5qZWN0EgcaBWZhbHNlChoKB01FU0hfSUQSDxoNY2x1c3Rlci5sb2NhbAovCgROQU1FEicaJWlzdGlvLWluZ3Jlc3NnYXRld2F5LTU2YjQ5OTg5ZjQtZHZ4cTQKGwoJTkFNRVNQQUNFEg4aDGlzdGlvLXN5c3RlbQpdCgVPV05FUhJUGlJrdWJlcm5ldGVzOi8vYXBpcy9hcHBzL3YxL25hbWVzcGFjZXMvaXN0aW8tc3lzdGVtL2RlcGxveW1lbnRzL2lzdGlvLWluZ3Jlc3NnYXRld2F5CicKDVdPUktMT0FEX05BTUUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXk='
+'x-envoy-attempt-count', '1'
+'x-b3-traceid', 'c5dce8938a65c5f62913cab70081b3f2'
+'x-b3-spanid', '2913cab70081b3f2'
+'x-b3-sampled', '1'
+	thread=22
+2024-05-19T12:43:16.112066Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"29","StreamId":"5109224888259454529"] request end stream	thread=22
+2024-05-19T12:43:16.112198Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 Lua filter started	thread=22
+2024-05-19T12:43:16.112211Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 token exists	thread=22
+2024-05-19T12:43:16.112236Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 jwt exists	thread=22
+2024-05-19T12:43:16.112241Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 dot_index exists	thread=22
+2024-05-19T12:43:16.112250Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 second_dot_index exists	thread=22
+2024-05-19T12:43:16.112261Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 111 base64url_payload: eyJpc3MiOiJodHRwOi8vandrcy1zdmMtY2x1c3RlciIsInN1YiI6IjlsMG4wRDZzMGpsMTRadjRCaDVlbW5jcGpWTlpFaEpBQGNsaWVudHMiLCJhdWQiOiJodHRwczovL2ZpcnN0LndkYi5jb20udWEiLCJpYXQiOjE3MTYxMjA3NTEsImV4cCI6MTcxNjEyNDM1MSwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXpwIjoiOWwwbjBENnMwamwxNFp2NEJoNWVtbmNwalZOWkVoSkEiLCJzZXJ2aWNlIjoid2FsbGV0In0	thread=22
+2024-05-19T12:43:16.113653Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 11122 payload_json: {"iss":"http://jwks-svc-cluster","sub":"9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA@clients","aud":"https://first.wdb.com.ua","iat":1716120751,"exp":1716124351,"gty":"client-credentials","azp":"9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA","service":"wallet"}	thread=22
+2024-05-19T12:43:16.113694Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: 11122 payload parsed:table: 0x7f90c6d65728	thread=22
+2024-05-19T12:43:16.113697Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: iss Value: http	thread=22
+2024-05-19T12:43:16.113698Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: azp Value: 9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA	thread=22
+2024-05-19T12:43:16.113700Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: sub Value: 9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA@clients	thread=22
+2024-05-19T12:43:16.113701Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: gty Value: client-credentials	thread=22
+2024-05-19T12:43:16.113702Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: exp Value: 1716124351	thread=22
+2024-05-19T12:43:16.113707Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: iat Value: 1716120751	thread=22
+2024-05-19T12:43:16.113708Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: aud Value: https	thread=22
+2024-05-19T12:43:16.113709Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Key: service Value: wallet	thread=22
+2024-05-19T12:43:16.113711Z	info	envoy lua external/envoy/source/extensions/filters/http/lua/lua_filter.cc:920	script log: Service name: wallet	thread=22
+2024-05-19T12:43:16.113718Z	debug	envoy lua external/envoy/source/extensions/filters/common/lua/lua.cc:39	coroutine finished	thread=22
+2024-05-19T12:43:16.163915Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"29","StreamId":"5109224888259454529"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'application/json'
+'content-length', '758'
+'date', 'Sun, 19 May 2024 12:43:16 GMT'
+'server', 'istio-envoy'
+'x-envoy-upstream-service-time', '49'
+'x-envoy-peer-metadata-id', 'sidecar~192.168.97.249~first-deploy-7ccf7bb959-9rzl2.default~default.svc.cluster.local'
+'x-envoy-peer-metadata', 'Ch0KDkFQUF9DT05UQUlORVJTEgsaCXdlYi1maXJzdAoaCgpDTFVTVEVSX0lEEgwaCkt1YmVybmV0ZXMKIAoMSU5TVEFOQ0VfSVBTEhAaDjE5Mi4xNjguOTcuMjQ5ChkKDUlTVElPX1ZFUlNJT04SCBoGMS4yMC4wCsIBCgZMQUJFTFMStwEqtAEKEgoDYXBwEgsaCWZpcnN0LWFwcAokChlzZWN1cml0eS5pc3Rpby5pby90bHNNb2RlEgcaBWlzdGlvCi4KH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSCxoJZmlyc3QtYXBwCjEKI3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLXJldmlzaW9uEgoaCDI0LjQuMC4xChUKB3ZlcnNpb24SChoIMjQuNC4wLjEKGgoHTUVTSF9JRBIPGg1jbHVzdGVyLmxvY2FsCicKBE5BTUUSHxodZmlyc3QtZGVwbG95LTdjY2Y3YmI5NTktOXJ6bDIKFgoJTkFNRVNQQUNFEgkaB2RlZmF1bHQKUAoFT1dORVISRxpFa3ViZXJuZXRlczovL2FwaXMvYXBwcy92MS9uYW1lc3BhY2VzL2RlZmF1bHQvZGVwbG95bWVudHMvZmlyc3QtZGVwbG95Ch8KDVdPUktMT0FEX05BTUUSDhoMZmlyc3QtZGVwbG95'
+	thread=22
+2024-05-19T12:43:16.164111Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"29","StreamId":"5109224888259454529"] Codec completed encoding stream.	thread=22
+[2024-05-19T12:43:16.111Z] "GET / HTTP/2" 200 - via_upstream - "-" 0 758 52 49 "192.168.39.0" "curl/8.1.2" "ac93e8da-aba8-949b-bc99-44423c0dacc4" "first.wdb.com.ua" "192.168.97.249:8083" inbound|8083|| 127.0.0.6:39921 192.168.97.249:8083 192.168.39.0:0 outbound_.80_._.first-svc-cluster.default.svc.cluster.local default
+2024-05-19T12:43:19.949267Z	debug	envoy http external/envoy/source/common/http/async_client_impl.cc:106	async http request response headers (end_stream=true):
+':status', '202'
+'vary', 'Origin'
+'date', 'Sun, 19 May 2024 12:43:19 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+	thread=22
+2024-05-19T12:43:22.934605Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"7"] new stream	thread=23
+2024-05-19T12:43:22.934809Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"7","StreamId":"1745539070634753110"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+	thread=23
+2024-05-19T12:43:22.934848Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"7","StreamId":"1745539070634753110"] request end stream	thread=23
+2024-05-19T12:43:22.935060Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:391	[Tags: "ConnectionId":"9"] new stream	thread=14
+2024-05-19T12:43:22.935138Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1194	[Tags: "ConnectionId":"9","StreamId":"3089836529104406880"] request headers complete (end_stream=true):
+':authority', 'localhost:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/2.41.0'
+'accept', 'application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1'
+'x-prometheus-scrape-timeout-seconds', '10'
+'accept-encoding', 'gzip'
+'x-forwarded-proto', 'http'
+'x-request-id', '989a8eeb-ede4-4886-9976-511dd39cb868'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=14
+2024-05-19T12:43:22.935160Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1177	[Tags: "ConnectionId":"9","StreamId":"3089836529104406880"] request end stream	thread=14
+2024-05-19T12:43:22.935883Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"9","StreamId":"3089836529104406880"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:43:22 GMT'
+'server', 'envoy'
+	thread=14
+2024-05-19T12:43:22.935934Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"9","StreamId":"3089836529104406880"] Codec completed encoding stream.	thread=14
+2024-05-19T12:43:22.936122Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1863	[Tags: "ConnectionId":"7","StreamId":"1745539070634753110"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Sun, 19 May 2024 12:43:22 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '1'
+	thread=23
+2024-05-19T12:43:22.936182Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1968	[Tags: "ConnectionId":"7","StreamId":"1745539070634753110"] Codec completed encoding stream.	thread=23

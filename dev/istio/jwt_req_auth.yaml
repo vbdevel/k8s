@@ -8,5 +8,5 @@ spec:
     matchLabels:
       app: first-app
   jwtRules:
-  - issuer: "https://dev-176hl1mzfw8138sm.us.auth0.com/"
-    jwksUri: "https://dev-176hl1mzfw8138sm.us.auth0.com/.well-known/jwks.json"
+  - issuer: "http://jwks-svc-cluster"
+    jwksUri: "http://second.wdb.com.ua/.well-known/jwks.json"
