@@ -10,16 +10,9 @@ spec:
   configPatches:
   - applyTo: HTTP_FILTER
     match:
-      context: ANY
-      listener:
-        portNumber: 443
-        filterChain:
-          filter:
-            name: "envoy.filters.network.http_connection_manager"
-            subFilter:
-              name: "envoy.filters.http.jwt_authn"
+      context: GATEWAY
     patch:
-      operation: INSERT_BEFORE
+      operation: INSERT_FIRST
       value:
         name: envoy.filters.http.lua
         typed_config:
@@ -82,10 +75,6 @@ spec:
                       base64url_payload = base64url_payload:gsub("-", "+"):gsub("_", "/")
                       request_handle:logInfo("111 base64url_payload: " .. base64url_payload)
 
-
-
-
-
                       local status, payload_json = pcall(function() return dec(base64url_payload) end)
                       if status and payload_json then
                         request_handle:logInfo("11122 payload_json: " .. payload_json)
@@ -112,23 +101,13 @@ spec:
                           else
                               request_handle:logInfo("Error parsing payload JSON: " .. tostring(payload))
                           end
-
-
-
-
-
-
-
-
                       else
                         request_handle:logInfo("11122 error decoding base64 payload: " .. tostring(payload_json))
                       end
-
-
-
                     end
                 end
               end
 
-              request_handle:headers():add("debug", "finished")
+              
             end
+  

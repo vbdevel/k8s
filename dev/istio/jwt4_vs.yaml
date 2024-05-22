@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: jwt4-vs
+  namespace: default
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - global-gw
+  http:
+    - match:
+      - headers:
+          srv:
+            exact: "wallet"
+      route:
+      - destination:
+          host: second-svc-cluster.default.svc.cluster.local
+          port:
+              number: 80  
+    - match:
+        - uri:
+            prefix: "/"
+      route:
+        - destination:
+            host: first-svc-cluster.default.svc.cluster.local
+          weight: 100
+
