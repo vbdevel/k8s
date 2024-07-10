@@ -16,10 +16,10 @@ payload = {
     "sub": "9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA@clients",
     "aud": "https://first.wdb.com.ua",
     "iat": current_time,
-    "exp": current_time + 3600,
+    "exp": current_time + 7200,
     "gty": "client-credentials",
     "azp": "9l0n0D6s0jl14Zv4Bh5emncpjVNZEhJA",
-    "service": "wallet"
+    "service": "wallet-24.5.0.1"
 }
 
 # Получение `kid` из ключа
