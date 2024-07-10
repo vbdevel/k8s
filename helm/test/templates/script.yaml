@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: script-{{ include "test.fullname" . }}
-data:
-  test.sh: |
-    echo "start {{ .Values.job }}"
-    sleep 15
-    pwd
