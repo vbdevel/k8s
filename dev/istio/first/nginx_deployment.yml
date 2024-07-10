@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment
+  name: nginx-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: first-app
+  template:
+    metadata:
+      labels:
+        app: first-app
+        version: "24.3.0.1"
+    spec:
+      containers:
+        - name: web-first
+          image: nginx
+          volumeMounts:
+          - name: nginx-config
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+          - name: default-config
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
+          - name: index-file
+            mountPath: /usr/share/nginx/html/index.html
+            subPath: first
+          - name: pvc
+            mountPath: "/opt"
+            name: first-volume
+
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+        - name: default-config
+          configMap:
+            name: default-config
+        - name: index-file
+          configMap:
+            name: first-config
+        - name: first-volume
+          persistentVolumeClaim:
+            claimName: pvc2

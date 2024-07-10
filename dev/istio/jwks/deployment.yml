@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jwks-deployment
+  name: jwks-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jwks
+  template:
+    metadata:
+      labels:
+        app: jwks
+    spec:
+      containers:
+        - name: jwks-server
+          image: vbvit/jwks-server:0.2
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP

@@ -1,0 +1,62 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: first-vs
+  namespace: default  # Убедитесь, что namespace совпадает с namespace Gateway
+spec:
+  gateways:
+  - global-gw
+  hosts:
+  - "first.wdb.com.ua"
+  http:
+  - match:
+    - uri:
+        prefix: /.well-known/acme-challenge/
+    route:
+    - destination:
+        host: cert-manager.cert-manager.svc.cluster.local
+        port:
+          number: 9402
+  - match:
+    - headers:
+        SRV:
+          exact: "wallet"
+    route:
+    - destination:
+        host: second-svc-cluster
+        port:
+            number: 80
+  - match:
+      - uri:
+          prefix: /  # Перехват всех остальных запросов
+    route:
+      - destination:
+          host: first-svc-cluster.default.svc.cluster.local  # Сервис по умолчанию
+          port:
+            number: 80
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: second-vs
+  namespace: default
+spec:
+  hosts:
+  - "second.wdb.com.ua"
+  gateways:
+  - global-gw
+  http:
+  - match:
+    - uri:
+        prefix: /.well-known/acme-challenge/
+    route:
+    - destination:
+        host: cert-manager.cert-manager.svc.cluster.local
+        port:
+          number: 9402
+  - route:
+    - destination:
+        host: jwks-svc-cluster
+        port:
+          number: 80

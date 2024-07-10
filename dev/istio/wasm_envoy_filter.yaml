@@ -1,0 +1,36 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: wasm-routing-filter
+  namespace: default
+spec:
+  workloadSelector:
+    labels:
+      app: first-app
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: SIDECAR_INBOUND
+        listener:
+          portNumber: 80
+          filterChain:
+            filter:
+              name: "envoy.filters.network.http_connection_manager"
+              subFilter:
+                name: "envoy.filters.http.router"
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: "envoy.filters.http.wasm"
+          typedConfig:
+            "@type": "type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm"
+            config:
+              vmConfig:
+                runtime: "envoy.wasm.runtime.v8"
+                vmId: "wasm_routing"
+                code:
+                  remote:
+                    httpUri:
+                      uri: "http://third-svc-balancer.default.svc.cluster.local/wasm_routing_bg.wasm"
+                      timeout: "10s"
+

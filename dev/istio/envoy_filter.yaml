@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: version-routing-lua
+  namespace: default
+spec:
+  workloadSelector:
+    labels:
+      app: first-app  # Замените на метку вашего приложения
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: SIDECAR_INBOUND
+        listener:
+          filterChain:
+            filter:
+              name: "envoy.filters.network.http_connection_manager"
+      patch:
+        operation: INSERT_FIRST
+        value:
+          name: envoy.filters.http.lua
+          typedConfig:
+            "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+            inlineCode: |
+              function envoy_on_request(request_handle)
+                local version = request_handle:headers():get("pop-version")
+                if version == "24.3.0.1" then
+                  request_handle:headers():replace("x-envoy-upstream-rq-timeout-ms", "60000")
+                  request_handle:headers():replace(":path", "/wallet-24-3-0-1")
+                else
+                  request_handle:headers():replace("x-envoy-upstream-rq-timeout-ms", "60000")
+                  request_handle:headers():replace(":path", "/wallet-default")
+                end
+              end
+

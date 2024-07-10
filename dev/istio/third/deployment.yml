@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: third-deployment
+  name: third-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: third-app
+  template:
+    metadata:
+      labels:
+        app: third-app
+    spec:
+      containers:
+        - name: web-third
+          image: nginx
+          volumeMounts:
+          - name: index-file
+            mountPath: /usr/share/nginx/html/index.html
+            subPath: third
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      volumes:
+        - name: index-file
+          configMap:
+            name: third-config

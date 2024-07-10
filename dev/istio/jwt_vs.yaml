@@ -1,0 +1,45 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: jwt-service
+spec:
+  hosts:
+  - "first.wdb.com.ua"
+  gateways:
+  - global-gw
+  http:
+  - match:
+    - headers:
+        Service:
+          exact: "wallet"
+    route:
+    - destination:
+        host: jwks-svc-cluster.default.svc.cluster.local
+        port:
+            number: 80
+  - match:
+      - uri:
+          prefix: /  # Перехват всех остальных запросов
+    route:
+      - destination:
+          host: first-svc-cluster.default.svc.cluster.local  # Сервис по умолчанию
+          port:
+            number: 80
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: second-virtualservice
+  namespace: default
+spec:
+  hosts:
+  - "second.wdb.com.ua"
+  gateways:
+  - global-gw
+  http:
+  - route:
+    - destination:
+        host: jwks-svc-cluster
+        port:
+          number: 80

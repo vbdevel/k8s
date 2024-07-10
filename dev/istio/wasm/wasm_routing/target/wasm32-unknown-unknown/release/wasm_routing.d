@@ -1,0 +1,1 @@
+/Users/vbvit/DEVOPS/k8s/dev/istio/wasm/wasm_routing/target/wasm32-unknown-unknown/release/wasm_routing.wasm: /Users/vbvit/DEVOPS/k8s/dev/istio/wasm/wasm_routing/src/lib.rs /Users/vbvit/DEVOPS/k8s/dev/istio/wasm/wasm_routing/src/main.rs
