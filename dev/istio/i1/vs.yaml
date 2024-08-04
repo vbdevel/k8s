@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: i1-vs
+  namespace: default
+spec:
+  hosts:
+    - "i1.wdb.com.ua"
+  gateways:
+    - global-gw
+  http:
+    - route:
+        - destination:
+            host: i1-svc
+            port:
+              number: 80

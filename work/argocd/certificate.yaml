@@ -1,0 +1,28 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: apple.vbvit@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-issuer-key
+    solvers:
+    - http01:
+        ingress:
+          class: istio
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-certificate
+  namespace: istio-system
+spec:
+  secretName: argocd-https-secret
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer
+  commonName: "argocd.wdb.com.ua"
+  dnsNames:
+  - "argocd.wdb.com.ua"

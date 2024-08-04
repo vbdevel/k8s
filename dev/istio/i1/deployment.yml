@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: i1
+  name: i1-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i1-app
+  template:
+    metadata:
+      labels:
+        app: i1-app
+    spec:
+      containers:
+        - name: web
+          image: vbvit/http2-server:0.2
+          ports:
+            - name: http
+              containerPort: 8083
+              protocol: TCP
